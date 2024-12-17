@@ -1,0 +1,34 @@
+{
+	"env": {
+		"jest/globals": true
+	},
+	"plugins": [ "jest" ],
+	"extends": [ "plugin:@wordpress/eslint-plugin/recommended" ],
+	"ignorePatterns": [
+		"_bin/**/*.js",
+		"plugins/minimal-block-no-build-e621a6/**/*.js",
+		"plugins/**/e2e/*.js"
+	],
+	"rules": {
+		"@wordpress/i18n-text-domain": [
+			"error",
+			{
+				"allowedTextDomain": "block-development-examples"
+			}
+		],
+		"no-console": "off",
+		"jsdoc/no-undefined-types": "off"
+	},
+	"overrides": [
+		{
+			"files": [ "_app/**/*.js" ],
+			"rules": {
+				"import/no-unresolved": "off"
+			}
+		}
+	],
+	"globals": {
+		"jQuery": "readonly",
+		"HTMLElement": true
+	}
+}
